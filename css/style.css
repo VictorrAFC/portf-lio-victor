@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --main-color: #00eeff;
+    --text-color: #ffff;
+    --bg-color-01: #1f242d;
+    --bg-color-02: #323946;
+    --color-00: #0000001a;
+
+    --color-01: #999999;
+    --color-02: #009539;
+    --color-03: #7950f2;
+    --color-04: #c00000;
+    --color-05: #232323;
+    --color-06: #0C0C1C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none; /* Ensure borders are only reset when needed */
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+body {
+    background-color: var(--color-06);
+    color: var(--text-color);
+}
+
+/* Estilo para a barra de navegação */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilo para links de navegação */
+.nav-responsive {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-responsive a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-responsive a:hover {
+    color: #ddd;
+}
+
+/* Estilo para o menu hambúrguer */
+.menu-hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.menu-hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .nav-responsive {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .nav-responsive.active {
+        display: flex;
+    }
+
+    .menu-hamburger {
+        display: flex;
+    }
+}
+
+
+.home, .about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.home-img {
+    border-right: solid 0.6rem;
+    border-bottom: solid 0.6rem;
+    border-image: linear-gradient(135deg, transparent 50%, var(--main-color));
+    display: flex;
+    justify-content: center;
+}
+
+.about-img {
+    border-right: solid 0.6rem;
+    border-bottom: solid 0.6rem;
+    border-image: linear-gradient(135deg, transparent 50%, var(--main-color)) 1;
+}
+
+/* Ajuste as imagens para caber dentro do contêiner sem cortes */
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Mantém a imagem inteira visível */
+}
+
+/* Defina tamanhos fixos para o contêiner para imagens do portfólio */
+.home-img, .about-img, .services-box img, .portfolio-box img {
+    width: 600px; /* Ajuste conforme necessário */
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta qualquer parte da imagem fora do contêiner */
+}
+
+.home-img img, .about-img img {
+    width: 40%;
+}
+
+.about {
+    background-color: var(--bg-color-02); /* Corrected the typo */
+}
+
+.home-content, .about-content {
+    width: 45%;
+}
+
+.home-content h1, .about-content h1 {
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content h3, .about-content h3 {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.home-content p, .about-content p {
+    margin-top: 1.2rem;
+    text-align: justify;
+}
+
+.services h2, .portfolio h2, .contact h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.services-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.services-box {
+    display: flex;
+    flex-direction: column; /* Corrected comment syntax */
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.services-box img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.services-box .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services-box h3 {
+    margin-bottom: 0.5rem;
+}
+
+.services-box p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.portfolio {
+    background-color: var(--bg-color-02); /* Corrected the typo */
+}
+
+.portfolio-container {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.portfolio-box {
+    position: relative;
+    border-radius: 0.6rem;
+    box-shadow: 0  0.6rem var(--bg-color-01); /* Corrected the typo */
+    overflow: hidden;
+    display: flex;
+}
+
+.portfolio-box img {
+    width: 30%;
+    transition: 0.5s ease;
+}
+
+.portfolio-box img:hover {
+    transform: scale(1.05);
+    filter: brightness(80%);
+}
+
+.portfolio-box .portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, var(--main-color)); /* Fixed background property */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translate(50rem);
+    transition: 0.5s;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+    font-size: 1.8rem;
+}
+
+.portfolio-layer p {
+    margin: 0.2rem 0 0.5rem;
+}
+
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+.portfolio-layer a i {
+    font-size: 1.2rem;
+    color: var(--bg-color-02); /* Corrected the typo */
+}
+
+form {
+    max-width: 45rem;
+    margin: 0.6rem auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .input-box input,
+
+form textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--bg-color-02);
+    border-radius: 0.5rem;
+    margin: 0.4rem 0;
+}
+
+form textarea {
+    resize: none;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    padding: 1.2rem;
+    background-color: var(--bg-color-01);
+}
+
+.social-media img {
+    width: 3.5rem; /* Corrected typo */
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: solid 0.15rem var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--text-color);
+    margin: 1.8rem 0.5rem; /* Corrected comma to period */
+    transition: 0.5s ease;
+}
+
+.social-media a:hover {
+    background-color: var(--main-color)
+}
